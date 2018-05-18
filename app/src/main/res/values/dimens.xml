@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_default">16dp</dimen>
+    <dimen name="track_icon_padding">16dp</dimen>
+    <dimen name="nav_icon_height">64dp</dimen>
+    <dimen name="nav_icon_width">64dp</dimen>
+    <dimen name="track_item_height">64dp</dimen>
+    <dimen name="track_icon_height">64dp</dimen>
+    <dimen name="track_icon_width">64dp</dimen>
+</resources>

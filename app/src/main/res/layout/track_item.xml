@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Layout for a single list item -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/track_icon_width"
+        android:layout_height="@dimen/track_icon_height"
+        tools:src="@drawable/cover_queen_dontstopme" />
+
+    <LinearLayout
+        android:id="@+id/text_container"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/track_icon_padding">
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:textColor="@color/colorTextSharp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Don't Stop Me Now"
+            />
+
+        <TextView
+            android:id="@+id/artist_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Queen"
+            />
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/play_button_track"
+        android:layout_width="@dimen/track_icon_width"
+        android:layout_height="@dimen/track_icon_height"
+        app:srcCompat="@drawable/ic_p_play"
+        />
+
+</LinearLayout>
