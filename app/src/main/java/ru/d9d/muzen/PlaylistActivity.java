@@ -1,5 +1,7 @@
 package ru.d9d.muzen;
 
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -19,19 +21,23 @@ public class PlaylistActivity extends AppCompatActivity {
         ArrayList<Track> tracks = new ArrayList<>();
 
         /**
-         * Test tracks data
+         * Test tracks data from resources
          * TODO: Fill with real data
          */
-        tracks.add(new Track("Don't Stop Me Now", "Queen", 210, R.drawable.cover_queen_dontstopme));
-        tracks.add(new Track("Dancing with Kadafi", "Infected Mushroom", 619, R.drawable.cover_im_bpempire));
-        tracks.add(new Track("Don't Stop Me Now", "Queen", 210, R.drawable.cover_queen_dontstopme));
-        tracks.add(new Track("Dancing with Kadafi", "Infected Mushroom", 619, R.drawable.cover_im_bpempire));
-        tracks.add(new Track("Don't Stop Me Now", "Queen", 210, R.drawable.cover_queen_dontstopme));
-        tracks.add(new Track("Dancing with Kadafi", "Infected Mushroom", 619, R.drawable.cover_im_bpempire));
-        tracks.add(new Track("Don't Stop Me Now", "Queen", 210, R.drawable.cover_queen_dontstopme));
-        tracks.add(new Track("Dancing with Kadafi", "Infected Mushroom", 619, R.drawable.cover_im_bpempire));
-        tracks.add(new Track("Don't Stop Me Now", "Queen", 210, R.drawable.cover_queen_dontstopme));
-        tracks.add(new Track("Dancing with Kadafi", "Infected Mushroom", 619, R.drawable.cover_im_bpempire));
+
+        // Get track resources into arrays
+        Resources res = getResources();
+        String[] arrTitles = res.getStringArray(R.array.track_titles);
+        String[] arrArtists = res.getStringArray(R.array.track_artists);
+        int[] arrLengths = res.getIntArray(R.array.track_lengths);
+        TypedArray arrImages = res.obtainTypedArray(R.array.track_images);
+
+        // Add tracks data from arrays
+        for (int i = 0; i < arrTitles.length; i++) {
+            int imageRes = arrImages.getResourceId(i, -1); // -1 if no image cover provided
+            tracks.add(new Track(arrTitles[i], arrArtists[i], arrLengths[i], imageRes));
+        }
+        arrImages.recycle();
 
         /**
          * Setting TrackAdapter for ListView

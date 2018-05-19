@@ -3,4 +3,21 @@
     <string name="title_playlist">Playlist</string>
     <string name="track_image_desc">Track artwork</string>
     <string name="track_play_desc">Play track</string>
+    <string-array name="track_titles">
+        <item>Don\'t Stop Me Now</item>
+        <item>Dancing with Kadafi</item>
+    </string-array>
+    <string-array name="track_artists">
+        <item>Queen</item>
+        <item>Infected Mushroom</item>
+    </string-array>
+    <integer-array name="track_lengths">
+        <item>210</item>
+        <item>619</item>
+    </integer-array>
+    <integer-array name="track_images">
+        <item>@drawable/cover_queen_dontstopme</item>
+        <item>@drawable/cover_im_bpempire</item>
+    </integer-array>
+
 </resources>
